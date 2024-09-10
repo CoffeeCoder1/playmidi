@@ -15,3 +15,10 @@ jobs:
         sudo apt-get -y --no-install-recommends install libsdl2-dev
     - name: make
       run: make
+    - name: upload build artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: build
+        path: |
+          playmidi
+          playmidi.1*
