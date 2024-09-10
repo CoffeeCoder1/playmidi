@@ -1,14 +1,12 @@
 ifeq ($(shell uname -s),Darwin)
- INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -F/Library/Frameworks
- SDL =  -F/Library/Frameworks -framework SDL2
  MIDIDEP = coremidi.o
  MIDILIB = -framework CoreMIDI -framework CoreFoundation
 else
- INCLUDES = $(shell sdl2-config --cflags)
- SDL = $(shell sdl2-config --libs)
  MIDIDEP = alsamidi.o
  MIDILIB = -lasound
 endif
+INCLUDES = $(shell sdl2-config --cflags)
+SDL = $(shell sdl2-config --libs)
 CFLAGS = -O2 -Wall -Wno-multichar -g $(INCLUDES)
 TFLAGS = -DTEST_TARGET
 LDFLAGS = -lm -lncurses $(SDL) $(MIDILIB)
