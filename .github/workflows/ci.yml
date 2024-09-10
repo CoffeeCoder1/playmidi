@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: install dependencies
+    - name: Install dependencies
       run: |
         sudo apt-get update
         sudo apt-get -y --no-install-recommends install libsdl2-dev
-    - name: make
+    - name: Run make
       run: make
-    - name: upload build artifact
+    - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
         name: build
