@@ -15,7 +15,7 @@
    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *************************************************************************/
 #include "playmidi.h"
-#include "SDL2/SDL.h"
+#include "SDL.h"
 
 int format, ntrks, division;
 unsigned char *midifilebuf;
